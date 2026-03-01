@@ -6,35 +6,37 @@ export default function BookingForm() {
 
   if (submitted) {
     return (
-      <div className="bg-lavender/20 rounded-2xl p-8 text-center">
-        <div className="text-2xl font-heading font-bold text-coral mb-4">Success!</div>
-        <h3 className="font-heading text-2xl font-bold mb-2">Booking Request Sent!</h3>
-        <p className="text-dark/70">We&apos;ll confirm your appointment within 24 hours.</p>
+      <div className="bg-lavender-light rounded-2xl p-10 text-center">
+        <div className="text-5xl mb-4">🎉</div>
+        <h3 className="font-heading text-2xl font-extrabold mb-3 text-dark">Booking Request Sent!</h3>
+        <p className="text-dark/60 text-lg">We&apos;ll confirm your appointment within 24 hours.</p>
       </div>
     );
   }
 
+  const inputClass = "w-full rounded-xl border border-lavender bg-lavender-light/50 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-coral/40 focus:border-coral/40 transition-all duration-300 text-dark";
+
   return (
     <form
       onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }}
-      className="bg-white rounded-2xl shadow-md p-6 md:p-8 space-y-5 border border-lavender/30"
+      className="bg-white rounded-2xl shadow-lg p-8 md:p-10 space-y-6 border border-lavender/40"
     >
-      <div className="grid md:grid-cols-2 gap-5">
+      <div className="grid md:grid-cols-2 gap-6">
         <div>
-          <label className="block text-sm font-semibold mb-1">Your Name</label>
-          <input required type="text" className="w-full rounded-xl border border-gray-200 px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-coral/50" />
+          <label className="block text-sm font-heading font-bold mb-2 text-dark/80">Your Name</label>
+          <input required type="text" className={inputClass} />
         </div>
         <div>
-          <label className="block text-sm font-semibold mb-1">Pet Name</label>
-          <input required type="text" className="w-full rounded-xl border border-gray-200 px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-coral/50" />
+          <label className="block text-sm font-heading font-bold mb-2 text-dark/80">Pet Name</label>
+          <input required type="text" className={inputClass} />
         </div>
         <div>
-          <label className="block text-sm font-semibold mb-1">Breed</label>
-          <input type="text" className="w-full rounded-xl border border-gray-200 px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-coral/50" />
+          <label className="block text-sm font-heading font-bold mb-2 text-dark/80">Breed</label>
+          <input type="text" className={inputClass} />
         </div>
         <div>
-          <label className="block text-sm font-semibold mb-1">Service</label>
-          <select required className="w-full rounded-xl border border-gray-200 px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-coral/50">
+          <label className="block text-sm font-heading font-bold mb-2 text-dark/80">Service</label>
+          <select required className={inputClass}>
             <option value="">Select a service...</option>
             <option>Bath & Brush</option>
             <option>Full Groom</option>
@@ -44,19 +46,19 @@ export default function BookingForm() {
           </select>
         </div>
         <div>
-          <label className="block text-sm font-semibold mb-1">Preferred Date</label>
-          <input required type="date" className="w-full rounded-xl border border-gray-200 px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-coral/50" />
+          <label className="block text-sm font-heading font-bold mb-2 text-dark/80">Preferred Date</label>
+          <input required type="date" className={inputClass} />
         </div>
         <div>
-          <label className="block text-sm font-semibold mb-1">Preferred Time</label>
-          <input required type="time" className="w-full rounded-xl border border-gray-200 px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-coral/50" />
+          <label className="block text-sm font-heading font-bold mb-2 text-dark/80">Preferred Time</label>
+          <input required type="time" className={inputClass} />
         </div>
       </div>
       <div>
-        <label className="block text-sm font-semibold mb-1">Notes</label>
-        <textarea rows={3} className="w-full rounded-xl border border-gray-200 px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-coral/50" placeholder="Anything we should know about your pup?" />
+        <label className="block text-sm font-heading font-bold mb-2 text-dark/80">Notes</label>
+        <textarea rows={3} className={inputClass} placeholder="Anything we should know about your pup?" />
       </div>
-      <button type="submit" className="w-full bg-coral text-white font-heading font-bold py-3 rounded-xl hover:bg-coral/90 transition-colors text-lg">
+      <button type="submit" className="w-full bg-coral text-white font-heading font-bold py-4 rounded-xl hover:bg-coral-dark hover:shadow-lg transition-all duration-300 text-lg">
         Request Appointment
       </button>
     </form>

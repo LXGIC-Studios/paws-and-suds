@@ -8,23 +8,23 @@ const services = [
 
 export default function PricingTable() {
   return (
-    <div className="overflow-x-auto">
-      <table className="w-full text-left rounded-2xl overflow-hidden shadow-md">
+    <div className="overflow-x-auto rounded-2xl shadow-lg border border-lavender/40">
+      <table className="w-full text-left">
         <thead className="bg-coral text-white font-heading">
           <tr>
-            <th className="px-6 py-4">Service</th>
-            <th className="px-6 py-4 text-center">Small<br /><span className="text-xs font-normal opacity-80">Under 25lbs</span></th>
-            <th className="px-6 py-4 text-center">Medium<br /><span className="text-xs font-normal opacity-80">25–50lbs</span></th>
-            <th className="px-6 py-4 text-center">Large<br /><span className="text-xs font-normal opacity-80">50lbs+</span></th>
+            <th className="px-8 py-5 text-sm uppercase tracking-wider">Service</th>
+            <th className="px-8 py-5 text-center text-sm uppercase tracking-wider">Small<br /><span className="text-xs font-normal opacity-80 normal-case">Under 25lbs</span></th>
+            <th className="px-8 py-5 text-center text-sm uppercase tracking-wider">Medium<br /><span className="text-xs font-normal opacity-80 normal-case">25–50lbs</span></th>
+            <th className="px-8 py-5 text-center text-sm uppercase tracking-wider">Large<br /><span className="text-xs font-normal opacity-80 normal-case">50lbs+</span></th>
           </tr>
         </thead>
         <tbody>
           {services.map((s, i) => (
-            <tr key={s.name} className={i % 2 === 0 ? "bg-lavender/10" : "bg-white"}>
-              <td className="px-6 py-4 font-semibold">{s.name}</td>
-              <td className="px-6 py-4 text-center">{s.small}</td>
-              <td className="px-6 py-4 text-center">{s.medium}</td>
-              <td className="px-6 py-4 text-center">{s.large}</td>
+            <tr key={s.name} className={`${i % 2 === 0 ? "bg-lavender-light/50" : "bg-white"} transition-colors hover:bg-lavender/30`}>
+              <td className="px-8 py-5 font-heading font-bold">{s.name}</td>
+              <td className="px-8 py-5 text-center font-semibold">{s.small}</td>
+              <td className="px-8 py-5 text-center font-semibold">{s.medium}</td>
+              <td className="px-8 py-5 text-center font-semibold">{s.large}</td>
             </tr>
           ))}
         </tbody>

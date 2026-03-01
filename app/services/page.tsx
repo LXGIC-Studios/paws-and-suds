@@ -2,46 +2,53 @@ import Link from "next/link";
 import PricingTable from "@/components/PricingTable";
 
 const addons = [
-  { name: "Teeth Brushing", price: "$10" },
-  { name: "Flea Treatment", price: "$15" },
-  { name: "Blueberry Facial", price: "$12" },
-  { name: "Nail Grinding", price: "$8" },
-  { name: "Cologne Spritz", price: "$5" },
+  { name: "Teeth Brushing", price: "$10", icon: "🦷" },
+  { name: "Flea Treatment", price: "$15", icon: "🛡️" },
+  { name: "Blueberry Facial", price: "$12", icon: "💆" },
+  { name: "Nail Grinding", price: "$8", icon: "✨" },
+  { name: "Cologne Spritz", price: "$5", icon: "🌸" },
 ];
 
 const packages = [
-  { name: "The Pampered Pup", description: "Full Groom + Teeth Brushing + Cologne Spritz", savings: "Save $5", price: "From $65" },
-  { name: "The Royal Treatment", description: "Full Groom + Blueberry Facial + Nail Grinding + Cologne Spritz", savings: "Save $10", price: "From $75" },
-  { name: "Shed-Free Bundle", description: "De-shedding Treatment + Bath & Brush + Cologne Spritz", savings: "Save $8", price: "From $72" },
+  { name: "The Pampered Pup", description: "Full Groom + Teeth Brushing + Cologne Spritz", savings: "Save $5", price: "From $65", featured: false },
+  { name: "The Royal Treatment", description: "Full Groom + Blueberry Facial + Nail Grinding + Cologne Spritz", savings: "Save $10", price: "From $75", featured: true },
+  { name: "Shed-Free Bundle", description: "De-shedding Treatment + Bath & Brush + Cologne Spritz", savings: "Save $8", price: "From $72", featured: false },
 ];
 
 export default function ServicesPage() {
   return (
     <>
-      <section className="bg-lavender/30 py-16">
-        <div className="max-w-6xl mx-auto px-4 text-center">
-          <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">Services & Pricing</h1>
+      <section className="bg-lavender-light py-24">
+        <div className="max-w-6xl mx-auto px-6 text-center">
+          <p className="section-label mb-3">Our Menu</p>
+          <h1 className="font-heading text-5xl md:text-6xl font-extrabold mb-5">Services & Pricing</h1>
           <p className="text-dark/60 text-lg max-w-2xl mx-auto">
             Transparent pricing with no hidden fees. Every service includes love, belly rubs, and treats!
           </p>
         </div>
       </section>
 
-      <section className="max-w-5xl mx-auto px-4 py-16">
-        <h2 className="font-heading text-3xl font-bold mb-8 text-center">Grooming Services</h2>
+      <section className="max-w-5xl mx-auto px-6 py-28">
+        <div className="text-center mb-12">
+          <p className="section-label mb-3">Price List</p>
+          <h2 className="font-heading text-4xl font-extrabold">Grooming Services</h2>
+        </div>
         <PricingTable />
       </section>
 
-      <section className="bg-lavender/20 py-16">
-        <div className="max-w-5xl mx-auto px-4">
-          <h2 className="font-heading text-3xl font-bold mb-8 text-center">Add-Ons</h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <section className="bg-lavender-light py-28">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <p className="section-label mb-3">Extras</p>
+            <h2 className="font-heading text-4xl font-extrabold">Add-Ons</h2>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {addons.map((a) => (
-              <div key={a.name} className="bg-white rounded-2xl shadow-sm p-5 flex items-center gap-4 border border-lavender/30">
-                <div className="w-10 h-10 rounded-full bg-coral/10 flex-shrink-0" />
+              <div key={a.name} className="bg-white rounded-2xl shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 p-6 flex items-center gap-5">
+                <div className="w-12 h-12 rounded-xl bg-lavender-light text-xl flex items-center justify-center flex-shrink-0">{a.icon}</div>
                 <div>
-                  <p className="font-heading font-bold">{a.name}</p>
-                  <p className="text-coral font-bold">{a.price}</p>
+                  <p className="font-heading font-bold text-lg">{a.name}</p>
+                  <p className="text-coral font-extrabold text-lg">{a.price}</p>
                 </div>
               </div>
             ))}
@@ -49,24 +56,28 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="max-w-5xl mx-auto px-4 py-16">
-        <h2 className="font-heading text-3xl font-bold mb-8 text-center">Package Deals</h2>
-        <div className="grid md:grid-cols-3 gap-6">
+      <section className="max-w-5xl mx-auto px-6 py-28">
+        <div className="text-center mb-14">
+          <p className="section-label mb-3">Best Value</p>
+          <h2 className="font-heading text-4xl font-extrabold">Package Deals</h2>
+        </div>
+        <div className="grid md:grid-cols-3 gap-8">
           {packages.map((p) => (
-            <div key={p.name} className="bg-white rounded-2xl shadow-md p-6 border-2 border-lavender/50 text-center relative overflow-hidden">
-              <div className="absolute top-3 right-3 bg-yellow-pop text-dark text-xs font-bold px-3 py-1 rounded-full">{p.savings}</div>
-              <h3 className="font-heading text-xl font-bold mb-2 mt-4">{p.name}</h3>
-              <p className="text-sm text-dark/60 mb-4">{p.description}</p>
-              <p className="font-heading text-2xl font-bold text-coral">{p.price}</p>
+            <div key={p.name} className={`bg-white rounded-2xl p-8 text-center relative overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ${p.featured ? "shadow-xl ring-2 ring-coral scale-[1.04]" : "shadow-md border border-lavender/40"}`}>
+              <div className="absolute top-4 right-4 bg-yellow-pop text-dark text-xs font-bold px-3 py-1.5 rounded-full">{p.savings}</div>
+              {p.featured && <div className="absolute top-0 left-0 right-0 h-1 bg-coral" />}
+              <h3 className="font-heading text-xl font-bold mb-3 mt-6">{p.name}</h3>
+              <p className="text-sm text-dark/50 mb-6 leading-relaxed">{p.description}</p>
+              <p className="font-heading text-3xl font-extrabold text-coral">{p.price}</p>
             </div>
           ))}
         </div>
       </section>
 
-      <section className="bg-coral/10 py-12">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="font-heading text-2xl font-bold mb-4">Ready to book?</h2>
-          <Link href="/book" className="bg-coral text-white font-heading font-bold px-10 py-3 rounded-xl hover:bg-coral/90 transition-colors text-lg inline-block">
+      <section className="bg-coral py-16">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <h2 className="font-heading text-3xl font-extrabold text-white mb-6">Ready to book?</h2>
+          <Link href="/book" className="bg-white text-coral font-heading font-bold px-12 py-4 rounded-2xl hover:bg-lavender-light hover:scale-[1.03] transition-all text-lg inline-block shadow-lg">
             Book an Appointment
           </Link>
         </div>

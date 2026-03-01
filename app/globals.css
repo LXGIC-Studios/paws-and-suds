@@ -4,7 +4,28 @@
   --font-heading: var(--font-nunito), sans-serif;
   --font-body: var(--font-inter), sans-serif;
   --color-lavender: #e8dff5;
+  --color-lavender-light: #f4f0fa;
   --color-coral: #f4845f;
+  --color-coral-dark: #e06d48;
   --color-yellow-pop: #fbbf24;
   --color-dark: #2d2d2d;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Premium transitions on all interactive elements */
+a, button, .card {
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Section label style */
+.section-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-coral);
 }

@@ -19,22 +19,23 @@ const images = [
 export default function GalleryPage() {
   return (
     <>
-      <section className="bg-lavender/30 py-16">
-        <div className="max-w-6xl mx-auto px-4 text-center">
-          <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">Our Gallery</h1>
+      <section className="bg-lavender-light py-24">
+        <div className="max-w-6xl mx-auto px-6 text-center">
+          <p className="section-label mb-3">See Our Work</p>
+          <h1 className="font-heading text-5xl md:text-6xl font-extrabold mb-5">Our Gallery</h1>
           <p className="text-dark/60 text-lg max-w-2xl mx-auto">
             Check out some of our happiest clients! Every pup leaves looking (and feeling) like a star.
           </p>
         </div>
       </section>
 
-      <section className="max-w-6xl mx-auto px-4 py-16">
+      <section className="max-w-6xl mx-auto px-6 py-28">
         <PhotoGallery images={images} columns={4} />
       </section>
 
-      <section className="text-center pb-16">
-        <p className="text-dark/60 mb-4">Want your pup to be featured?</p>
-        <Link href="/book" className="bg-coral text-white font-heading font-bold px-8 py-3 rounded-xl hover:bg-coral/90 transition-colors inline-block">
+      <section className="text-center pb-28">
+        <p className="text-dark/50 mb-6 text-lg">Want your pup to be featured?</p>
+        <Link href="/book" className="bg-coral text-white font-heading font-bold px-10 py-4 rounded-2xl hover:bg-coral-dark hover:scale-[1.03] hover:shadow-xl transition-all text-lg inline-block shadow-lg">
           Book a Groom
         </Link>
       </section>
