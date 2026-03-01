@@ -5,32 +5,32 @@ import PhotoGallery from "@/components/PhotoGallery";
 import TestimonialCard from "@/components/TestimonialCard";
 
 const services = [
-  { icon: "🛁", title: "Bath & Brush", description: "A refreshing bath with premium shampoo, blow-dry, and brush-out.", price: "From $35" },
-  { icon: "✂️", title: "Full Groom", description: "Complete grooming including haircut, bath, nail trim, and ear cleaning.", price: "From $55" },
-  { icon: "💅", title: "Nail Trim", description: "Quick and gentle nail trimming to keep paws healthy.", price: "From $15" },
-  { icon: "🧹", title: "De-shedding", description: "Specialized treatment to reduce shedding up to 80%.", price: "From $45" },
-  { icon: "🐶", title: "Puppy's First Groom", description: "A gentle introduction to grooming for puppies under 6 months.", price: "From $30" },
+  { icon: "bath", title: "Bath & Brush", description: "A refreshing bath with premium shampoo, blow-dry, and brush-out.", price: "From $35" },
+  { icon: "groom", title: "Full Groom", description: "Complete grooming including haircut, bath, nail trim, and ear cleaning.", price: "From $55" },
+  { icon: "nail", title: "Nail Trim", description: "Quick and gentle nail trimming to keep paws healthy.", price: "From $15" },
+  { icon: "deshed", title: "De-shedding", description: "Specialized treatment to reduce shedding up to 80%.", price: "From $45" },
+  { icon: "puppy", title: "Puppy's First Groom", description: "A gentle introduction to grooming for puppies under 6 months.", price: "From $30" },
 ];
 
 const galleryImages = [
   { src: "/images/hero.jpg", alt: "Happy dog" },
   { src: "/images/dog-bath.jpg", alt: "Dog getting a bath" },
   { src: "/images/poodle.jpg", alt: "Groomed poodle" },
-  { src: "/images/puppy.jpg", alt: "Cute puppy" },
-  { src: "/images/portrait.jpg", alt: "Dog portrait" },
+  { src: "/images/fluffy-dog.jpg", alt: "Fluffy dog smiling" },
   { src: "/images/golden.jpg", alt: "Golden retriever" },
+  { src: "/images/labrador.jpg", alt: "Labrador looking fresh" },
 ];
 
 const testimonials = [
-  { name: "Sarah M.", pet: "Bella (Golden Retriever)", text: "Paws & Suds is the only place I trust with Bella. She comes out looking and smelling amazing every time!", stars: 5 },
-  { name: "James T.", pet: "Max (French Bulldog)", text: "Max used to hate grooming, but the team here made him feel so comfortable. Now he gets excited for his appointments!", stars: 5 },
-  { name: "Lisa R.", pet: "Daisy (Poodle Mix)", text: "Incredible attention to detail and such a warm, welcoming atmosphere. Daisy always looks like a show dog after her visits.", stars: 5 },
+  { name: "Megan C.", pet: "Cooper, Golden Retriever", text: "My golden retriever has never looked so good. They were so gentle with him!", stars: 5 },
+  { name: "Andre J.", pet: "Bella, Standard Poodle", text: "Paws & Suds is the only groomer my picky poodle will tolerate. That says everything.", stars: 5 },
+  { name: "Stephanie H.", pet: "Milo, French Bulldog", text: "The puppy first groom package was perfect. My little guy was nervous but they handled it beautifully.", stars: 5 },
 ];
 
 export default function Home() {
   return (
     <>
-      {/* Hero - Full viewport with overlay */}
+      {/* Hero */}
       <section className="relative min-h-[92vh] flex items-center overflow-hidden">
         <Image
           src="/images/hero.jpg"
@@ -74,7 +74,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Pricing Preview */}
+      {/* Pricing */}
       <section className="bg-lavender-light py-28">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <p className="section-label mb-3">Transparent Pricing</p>
@@ -82,10 +82,11 @@ export default function Home() {
           <div className="grid sm:grid-cols-3 gap-8">
             {[
               { size: "Small Dogs", weight: "Under 25 lbs", price: "$35+", label: "S", featured: false },
-              { size: "Medium Dogs", weight: "25–50 lbs", price: "$50+", label: "M", featured: true },
+              { size: "Medium Dogs", weight: "25-50 lbs", price: "$50+", label: "M", featured: true },
               { size: "Large Dogs", weight: "50+ lbs", price: "$65+", label: "L", featured: false },
             ].map((p) => (
               <div key={p.size} className={`bg-white rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ${p.featured ? "shadow-xl ring-2 ring-coral scale-[1.04]" : "shadow-md"}`}>
+                {p.featured && <p className="text-xs font-heading font-bold text-coral uppercase tracking-wider mb-3">Most Popular</p>}
                 <div className="w-14 h-14 rounded-full bg-coral/10 text-coral font-heading font-bold text-xl flex items-center justify-center mx-auto mb-4">{p.label}</div>
                 <h3 className="font-heading text-xl font-bold">{p.size}</h3>
                 <p className="text-sm text-dark/50 mb-4">{p.weight}</p>
@@ -94,7 +95,7 @@ export default function Home() {
             ))}
           </div>
           <Link href="/services" className="inline-block mt-12 text-coral font-heading font-bold text-lg hover:underline underline-offset-4">
-            See full pricing →
+            See full pricing
           </Link>
         </div>
       </section>

@@ -1,12 +1,13 @@
 import Link from "next/link";
 import PricingTable from "@/components/PricingTable";
+import { Smile, Shield, Sparkles, Hand, Flower } from "lucide-react";
 
 const addons = [
-  { name: "Teeth Brushing", price: "$10", icon: "🦷" },
-  { name: "Flea Treatment", price: "$15", icon: "🛡️" },
-  { name: "Blueberry Facial", price: "$12", icon: "💆" },
-  { name: "Nail Grinding", price: "$8", icon: "✨" },
-  { name: "Cologne Spritz", price: "$5", icon: "🌸" },
+  { name: "Teeth Brushing", price: "$10", Icon: Smile },
+  { name: "Flea Treatment", price: "$15", Icon: Shield },
+  { name: "Blueberry Facial", price: "$12", Icon: Sparkles },
+  { name: "Nail Grinding", price: "$8", Icon: Hand },
+  { name: "Cologne Spritz", price: "$5", Icon: Flower },
 ];
 
 const packages = [
@@ -45,7 +46,9 @@ export default function ServicesPage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {addons.map((a) => (
               <div key={a.name} className="bg-white rounded-2xl shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 p-6 flex items-center gap-5">
-                <div className="w-12 h-12 rounded-xl bg-lavender-light text-xl flex items-center justify-center flex-shrink-0">{a.icon}</div>
+                <div className="w-12 h-12 rounded-xl bg-lavender-light flex items-center justify-center flex-shrink-0">
+                  <a.Icon className="w-6 h-6 text-coral" />
+                </div>
                 <div>
                   <p className="font-heading font-bold text-lg">{a.name}</p>
                   <p className="text-coral font-extrabold text-lg">{a.price}</p>

@@ -1,4 +1,5 @@
 import BookingForm from "@/components/BookingForm";
+import { MapPin, Phone, Clock, Heart } from "lucide-react";
 
 export default function BookPage() {
   return (
@@ -20,29 +21,41 @@ export default function BookPage() {
           </div>
           <div className="md:col-span-2 space-y-6">
             <div className="bg-white rounded-2xl p-7 shadow-md border border-lavender/40">
-              <h3 className="font-heading text-xl font-bold mb-3">📍 Visit Us</h3>
+              <div className="flex items-center gap-3 mb-3">
+                <MapPin className="w-5 h-5 text-coral" />
+                <h3 className="font-heading text-xl font-bold">Visit Us</h3>
+              </div>
               <p className="text-dark/60 leading-relaxed">
                 123 Bark Avenue<br />
                 Pawsville, TX 75001
               </p>
             </div>
             <div className="bg-white rounded-2xl p-7 shadow-md border border-lavender/40">
-              <h3 className="font-heading text-xl font-bold mb-3">📞 Call Us</h3>
+              <div className="flex items-center gap-3 mb-3">
+                <Phone className="w-5 h-5 text-coral" />
+                <h3 className="font-heading text-xl font-bold">Call Us</h3>
+              </div>
               <p className="text-dark/60">
                 (555) PAW-WASH<br />
                 (555) 729-9274
               </p>
             </div>
             <div className="bg-white rounded-2xl p-7 shadow-md border border-lavender/40">
-              <h3 className="font-heading text-xl font-bold mb-3">🕐 Hours</h3>
+              <div className="flex items-center gap-3 mb-3">
+                <Clock className="w-5 h-5 text-coral" />
+                <h3 className="font-heading text-xl font-bold">Hours</h3>
+              </div>
               <div className="text-dark/60 space-y-1.5">
-                <p>Mon–Fri: 8:00 AM – 6:00 PM</p>
-                <p>Saturday: 9:00 AM – 5:00 PM</p>
+                <p>Mon-Fri: 8:00 AM - 6:00 PM</p>
+                <p>Saturday: 9:00 AM - 5:00 PM</p>
                 <p>Sunday: Closed</p>
               </div>
             </div>
-            <div className="bg-yellow-pop/10 rounded-2xl p-7 border border-yellow-pop/30">
-              <h3 className="font-heading text-lg font-bold mb-2">🐾 First Visit?</h3>
+            <div className="bg-yellow-pop/30 rounded-2xl p-7 border border-yellow-pop/50">
+              <div className="flex items-center gap-3 mb-2">
+                <Heart className="w-5 h-5 text-coral" />
+                <h3 className="font-heading text-lg font-bold">First Visit?</h3>
+              </div>
               <p className="text-dark/60 text-sm leading-relaxed">
                 Please arrive 10 minutes early for your first visit so we can get to know you and your pup!
               </p>

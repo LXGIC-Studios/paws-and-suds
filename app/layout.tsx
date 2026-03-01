@@ -1,18 +1,18 @@
 import type { Metadata } from "next";
-import { Nunito, Inter } from "next/font/google";
+import { Quicksand, DM_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const nunito = Nunito({
+const quicksand = Quicksand({
   subsets: ["latin"],
-  variable: "--font-nunito",
+  variable: "--font-quicksand",
   display: "swap",
 });
 
-const inter = Inter({
+const dmSans = DM_Sans({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-dm-sans",
   display: "swap",
 });
 
@@ -28,8 +28,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${nunito.variable} ${inter.variable}`}>
-      <body className="font-body text-[#2d2d2d] bg-white antialiased">
+    <html lang="en" className={`${quicksand.variable} ${dmSans.variable}`}>
+      <body className="font-body text-[#2D2D2D] bg-white antialiased">
         <Navbar />
         <main className="pt-[76px]">{children}</main>
         <Footer />

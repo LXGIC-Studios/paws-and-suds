@@ -5,15 +5,15 @@ const images = [
   { src: "/images/hero.jpg", alt: "Happy dog smiling" },
   { src: "/images/dog-bath.jpg", alt: "Dog enjoying a bath" },
   { src: "/images/poodle.jpg", alt: "Freshly groomed poodle" },
-  { src: "/images/puppy.jpg", alt: "Adorable puppy" },
-  { src: "/images/portrait.jpg", alt: "Dog portrait" },
+  { src: "/images/fluffy-dog.jpg", alt: "Fluffy dog portrait" },
   { src: "/images/golden.jpg", alt: "Golden retriever looking fresh" },
+  { src: "/images/labrador.jpg", alt: "Labrador after grooming" },
+  { src: "/images/corgi.jpg", alt: "Happy corgi" },
   { src: "/images/small-dog.jpg", alt: "Small dog after grooming" },
+  { src: "/images/portrait.jpg", alt: "Dog portrait" },
+  { src: "/images/schnauzer.jpg", alt: "Schnauzer looking sharp" },
+  { src: "/images/puppy.jpg", alt: "Adorable puppy" },
   { src: "/images/closeup.jpg", alt: "Dog closeup" },
-  { src: "/images/poodle.jpg", alt: "Poodle looking fabulous" },
-  { src: "/images/puppy.jpg", alt: "Happy puppy after first groom" },
-  { src: "/images/portrait.jpg", alt: "Best boy portrait" },
-  { src: "/images/golden.jpg", alt: "Golden retriever spa day" },
 ];
 
 export default function GalleryPage() {
