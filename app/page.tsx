@@ -5,11 +5,11 @@ import PhotoGallery from "@/components/PhotoGallery";
 import TestimonialCard from "@/components/TestimonialCard";
 
 const services = [
-  { icon: "🛁", title: "Bath & Brush", description: "A refreshing bath with premium shampoo, blow-dry, and brush-out.", price: "From $35" },
-  { icon: "✂️", title: "Full Groom", description: "Complete grooming including haircut, bath, nail trim, and ear cleaning.", price: "From $55" },
-  { icon: "💅", title: "Nail Trim", description: "Quick and gentle nail trimming to keep paws healthy.", price: "From $15" },
-  { icon: "🧹", title: "De-shedding", description: "Specialized treatment to reduce shedding up to 80%.", price: "From $45" },
-  { icon: "🐶", title: "Puppy's First Groom", description: "A gentle introduction to grooming for puppies under 6 months.", price: "From $30" },
+  { icon: "bath", title: "Bath & Brush", description: "A refreshing bath with premium shampoo, blow-dry, and brush-out.", price: "From $35" },
+  { icon: "scissors", title: "Full Groom", description: "Complete grooming including haircut, bath, nail trim, and ear cleaning.", price: "From $55" },
+  { icon: "nail", title: "Nail Trim", description: "Quick and gentle nail trimming to keep paws healthy.", price: "From $15" },
+  { icon: "brush", title: "De-shedding", description: "Specialized treatment to reduce shedding up to 80%.", price: "From $45" },
+  { icon: "puppy", title: "Puppy's First Groom", description: "A gentle introduction to grooming for puppies under 6 months.", price: "From $30" },
 ];
 
 const galleryImages = [
@@ -35,7 +35,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4 py-16 md:py-24 flex flex-col md:flex-row items-center gap-8">
           <div className="flex-1 text-center md:text-left space-y-6">
             <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-              Your Pup Deserves a <span className="text-coral">Spa Day</span> 🐾
+              Your Pup Deserves a <span className="text-coral">Spa Day</span>
             </h1>
             <p className="text-lg text-dark/70 max-w-lg">
               Professional dog grooming in a stress-free, loving environment. Because every good boy (and girl) deserves to look and feel their best.
@@ -74,12 +74,12 @@ export default function Home() {
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-8">Simple, Transparent Pricing</h2>
           <div className="grid sm:grid-cols-3 gap-6">
             {[
-              { size: "Small Dogs", weight: "Under 25 lbs", price: "$35+", emoji: "🐕" },
-              { size: "Medium Dogs", weight: "25–50 lbs", price: "$50+", emoji: "🦮" },
-              { size: "Large Dogs", weight: "50+ lbs", price: "$65+", emoji: "🐕‍🦺" },
+              { size: "Small Dogs", weight: "Under 25 lbs", price: "$35+", label: "S" },
+              { size: "Medium Dogs", weight: "25–50 lbs", price: "$50+", label: "M" },
+              { size: "Large Dogs", weight: "50+ lbs", price: "$65+", label: "L" },
             ].map((p) => (
               <div key={p.size} className="bg-white rounded-2xl shadow-md p-6">
-                <div className="text-4xl mb-2">{p.emoji}</div>
+                <div className="w-12 h-12 rounded-full bg-coral/10 text-coral font-heading font-bold text-xl flex items-center justify-center mx-auto mb-2">{p.label}</div>
                 <h3 className="font-heading text-xl font-bold">{p.size}</h3>
                 <p className="text-sm text-dark/60 mb-3">{p.weight}</p>
                 <p className="font-heading text-3xl font-bold text-coral">{p.price}</p>
@@ -94,7 +94,7 @@ export default function Home() {
 
       {/* Gallery */}
       <section className="max-w-6xl mx-auto px-4 py-16">
-        <h2 className="font-heading text-3xl md:text-4xl font-bold text-center mb-3">Happy Pups Gallery 📸</h2>
+        <h2 className="font-heading text-3xl md:text-4xl font-bold text-center mb-3">Happy Pups Gallery</h2>
         <p className="text-center text-dark/60 mb-10">Some of our favorite furry clients looking their best!</p>
         <PhotoGallery images={galleryImages} />
       </section>
@@ -102,7 +102,7 @@ export default function Home() {
       {/* Testimonials */}
       <section className="bg-lavender/20 py-16">
         <div className="max-w-6xl mx-auto px-4">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-center mb-10">What Pet Parents Say 💬</h2>
+          <h2 className="font-heading text-3xl md:text-4xl font-bold text-center mb-10">What Pet Parents Say</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {testimonials.map((t) => (
               <TestimonialCard key={t.name} {...t} />
@@ -116,7 +116,7 @@ export default function Home() {
         <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">Ready to Pamper Your Pup?</h2>
         <p className="text-dark/60 mb-8 text-lg">Book your appointment today and give your furry friend the spa day they deserve!</p>
         <Link href="/book" className="bg-coral text-white font-heading font-bold px-10 py-4 rounded-xl hover:bg-coral/90 transition-colors text-xl inline-block">
-          Book Now 🐾
+          Book Now
         </Link>
       </section>
     </>

@@ -21,7 +21,7 @@ export default function GalleryPage() {
     <>
       <section className="bg-lavender/30 py-16">
         <div className="max-w-6xl mx-auto px-4 text-center">
-          <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">Our Gallery 📸</h1>
+          <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">Our Gallery</h1>
           <p className="text-dark/60 text-lg max-w-2xl mx-auto">
             Check out some of our happiest clients! Every pup leaves looking (and feeling) like a star.
           </p>
@@ -35,7 +35,7 @@ export default function GalleryPage() {
       <section className="text-center pb-16">
         <p className="text-dark/60 mb-4">Want your pup to be featured?</p>
         <Link href="/book" className="bg-coral text-white font-heading font-bold px-8 py-3 rounded-xl hover:bg-coral/90 transition-colors inline-block">
-          Book a Groom 🐾
+          Book a Groom
         </Link>
       </section>
     </>

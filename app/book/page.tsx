@@ -19,21 +19,21 @@ export default function BookPage() {
           </div>
           <div className="md:col-span-2 space-y-6">
             <div className="bg-lavender/20 rounded-2xl p-6">
-              <h3 className="font-heading text-xl font-bold mb-3">📍 Visit Us</h3>
+              <h3 className="font-heading text-xl font-bold mb-3">Visit Us</h3>
               <p className="text-dark/70 text-sm leading-relaxed">
                 123 Bark Avenue<br />
                 Pawsville, TX 75001
               </p>
             </div>
             <div className="bg-lavender/20 rounded-2xl p-6">
-              <h3 className="font-heading text-xl font-bold mb-3">📞 Call Us</h3>
+              <h3 className="font-heading text-xl font-bold mb-3">Call Us</h3>
               <p className="text-dark/70 text-sm">
                 (555) PAW-WASH<br />
                 (555) 729-9274
               </p>
             </div>
             <div className="bg-lavender/20 rounded-2xl p-6">
-              <h3 className="font-heading text-xl font-bold mb-3">🕐 Hours</h3>
+              <h3 className="font-heading text-xl font-bold mb-3">Hours</h3>
               <div className="text-dark/70 text-sm space-y-1">
                 <p>Mon–Fri: 8:00 AM – 6:00 PM</p>
                 <p>Saturday: 9:00 AM – 5:00 PM</p>
@@ -41,7 +41,7 @@ export default function BookPage() {
               </div>
             </div>
             <div className="bg-yellow-pop/20 rounded-2xl p-6 border border-yellow-pop/40">
-              <h3 className="font-heading text-lg font-bold mb-2">🐾 First Visit?</h3>
+              <h3 className="font-heading text-lg font-bold mb-2">First Visit?</h3>
               <p className="text-dark/70 text-sm">
                 Please arrive 10 minutes early for your first visit so we can get to know you and your pup!
               </p>

@@ -31,7 +31,7 @@ export default function RootLayout({
     <html lang="en" className={`${nunito.variable} ${inter.variable}`}>
       <body className="font-body text-[#2d2d2d] bg-white antialiased">
         <Navbar />
-        <main>{children}</main>
+        <main className="pt-[76px]">{children}</main>
         <Footer />
       </body>
     </html>

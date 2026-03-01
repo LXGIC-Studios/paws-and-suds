@@ -7,7 +7,7 @@ export default function BookingForm() {
   if (submitted) {
     return (
       <div className="bg-lavender/20 rounded-2xl p-8 text-center">
-        <div className="text-5xl mb-4">🎉</div>
+        <div className="text-2xl font-heading font-bold text-coral mb-4">Success!</div>
         <h3 className="font-heading text-2xl font-bold mb-2">Booking Request Sent!</h3>
         <p className="text-dark/70">We&apos;ll confirm your appointment within 24 hours.</p>
       </div>
@@ -57,7 +57,7 @@ export default function BookingForm() {
         <textarea rows={3} className="w-full rounded-xl border border-gray-200 px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-coral/50" placeholder="Anything we should know about your pup?" />
       </div>
       <button type="submit" className="w-full bg-coral text-white font-heading font-bold py-3 rounded-xl hover:bg-coral/90 transition-colors text-lg">
-        Request Appointment 🐾
+        Request Appointment
       </button>
     </form>
   );
