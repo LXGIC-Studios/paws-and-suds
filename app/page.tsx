@@ -235,7 +235,7 @@ export default function Home() {
                 &ldquo;{t.quote}&rdquo;
               </p>
               <p className="mt-3 text-sm text-dark/50">
-                - {t.name}, {t.pet}
+                {t.name}, {t.pet}
               </p>
             </div>
             {i < testimonials.length - 1 && (
