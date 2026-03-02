@@ -23,7 +23,7 @@ export default function Navigation() {
   return (
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-white/95 backdrop-blur-sm shadow-sm" : "bg-white"
+        scrolled ? "bg-white shadow-sm" : "bg-white"
       }`}
     >
       <div className="max-w-4xl mx-auto px-6 pt-6 pb-4">
