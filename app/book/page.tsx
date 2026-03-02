@@ -1,68 +1,153 @@
-import BookingForm from "@/components/BookingForm";
-import { MapPin, Phone, Clock, Heart } from "lucide-react";
+"use client";
+
+import { useState } from "react";
+import { Phone, MapPin, Clock } from "lucide-react";
 
 export default function BookPage() {
-  return (
-    <>
-      <section className="bg-lavender-light py-24">
-        <div className="max-w-6xl mx-auto px-6 text-center">
-          <p className="section-label mb-3">Schedule a Visit</p>
-          <h1 className="font-heading text-5xl md:text-6xl font-extrabold mb-5">Book an Appointment</h1>
-          <p className="text-dark/60 text-lg max-w-2xl mx-auto">
-            Fill out the form below and we&apos;ll get back to you within 24 hours to confirm your pup&apos;s spa day!
-          </p>
-        </div>
-      </section>
+  const [submitted, setSubmitted] = useState(false);
 
-      <section className="max-w-5xl mx-auto px-6 py-28">
-        <div className="grid md:grid-cols-5 gap-12">
-          <div className="md:col-span-3">
-            <BookingForm />
+  const inputClass =
+    "w-full rounded-xl border border-dark/15 px-4 py-3 text-dark bg-white focus:outline-none focus:border-coral/50 focus:ring-2 focus:ring-coral/20 transition-all duration-300 text-sm";
+
+  if (submitted) {
+    return (
+      <div className="max-w-2xl mx-auto px-6 py-24 text-center">
+        <h1 className="font-[family-name:var(--font-nunito)] text-3xl font-bold text-dark mb-4">
+          Thank You!
+        </h1>
+        <p className="text-dark/60">
+          We have received your booking request. We will be in touch shortly to
+          confirm your appointment.
+        </p>
+      </div>
+    );
+  }
+
+  return (
+    <div className="max-w-4xl mx-auto px-6 py-12">
+      <h1 className="font-[family-name:var(--font-nunito)] text-4xl font-bold text-dark text-center mb-4">
+        Book an Appointment
+      </h1>
+      <p className="text-center text-dark/50 mb-12">
+        Fill out the form below and we will confirm your appointment
+      </p>
+
+      <div className="grid md:grid-cols-3 gap-12">
+        <div className="md:col-span-2">
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              setSubmitted(true);
+            }}
+            className="space-y-5"
+          >
+            <div className="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label className="block text-sm text-dark/60 mb-1.5">
+                  Owner Name
+                </label>
+                <input
+                  type="text"
+                  required
+                  className={inputClass}
+                  placeholder="Your name"
+                />
+              </div>
+              <div>
+                <label className="block text-sm text-dark/60 mb-1.5">
+                  Pet Name
+                </label>
+                <input
+                  type="text"
+                  required
+                  className={inputClass}
+                  placeholder="Your pup's name"
+                />
+              </div>
+            </div>
+
+            <div className="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label className="block text-sm text-dark/60 mb-1.5">
+                  Breed
+                </label>
+                <input
+                  type="text"
+                  required
+                  className={inputClass}
+                  placeholder="e.g. Golden Retriever"
+                />
+              </div>
+              <div>
+                <label className="block text-sm text-dark/60 mb-1.5">
+                  Dog Size
+                </label>
+                <select required className={inputClass}>
+                  <option value="">Select size</option>
+                  <option>Small (under 25 lbs)</option>
+                  <option>Medium (25-50 lbs)</option>
+                  <option>Large (50+ lbs)</option>
+                </select>
+              </div>
+            </div>
+
+            <div className="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label className="block text-sm text-dark/60 mb-1.5">
+                  Service
+                </label>
+                <select required className={inputClass}>
+                  <option value="">Select service</option>
+                  <option>Bath & Brush</option>
+                  <option>Full Groom</option>
+                  <option>Nail Trim</option>
+                  <option>De-shedding Treatment</option>
+                  <option>Puppy&apos;s First Groom</option>
+                </select>
+              </div>
+              <div>
+                <label className="block text-sm text-dark/60 mb-1.5">
+                  Preferred Date
+                </label>
+                <input type="date" required className={inputClass} />
+              </div>
+            </div>
+
+            <div>
+              <label className="block text-sm text-dark/60 mb-1.5">
+                Special Notes
+              </label>
+              <textarea
+                rows={4}
+                className={inputClass}
+                placeholder="Anything we should know about your pup?"
+              />
+            </div>
+
+            <button
+              type="submit"
+              className="w-full sm:w-auto px-10 py-3.5 bg-coral text-white font-medium rounded-full hover:opacity-90 transition-opacity duration-300"
+            >
+              Book Now
+            </button>
+          </form>
+        </div>
+
+        <div className="space-y-6 text-sm text-dark/60">
+          <div className="flex items-start gap-3">
+            <Phone size={16} className="text-coral mt-0.5 shrink-0" />
+            <span>(555) PAW-WASH</span>
           </div>
-          <div className="md:col-span-2 space-y-6">
-            <div className="bg-white rounded-2xl p-7 shadow-md border border-lavender/40">
-              <div className="flex items-center gap-3 mb-3">
-                <MapPin className="w-5 h-5 text-coral" />
-                <h3 className="font-heading text-xl font-bold">Visit Us</h3>
-              </div>
-              <p className="text-dark/60 leading-relaxed">
-                123 Bark Avenue<br />
-                Pawsville, TX 75001
-              </p>
-            </div>
-            <div className="bg-white rounded-2xl p-7 shadow-md border border-lavender/40">
-              <div className="flex items-center gap-3 mb-3">
-                <Phone className="w-5 h-5 text-coral" />
-                <h3 className="font-heading text-xl font-bold">Call Us</h3>
-              </div>
-              <p className="text-dark/60">
-                (555) PAW-WASH<br />
-                (555) 729-9274
-              </p>
-            </div>
-            <div className="bg-white rounded-2xl p-7 shadow-md border border-lavender/40">
-              <div className="flex items-center gap-3 mb-3">
-                <Clock className="w-5 h-5 text-coral" />
-                <h3 className="font-heading text-xl font-bold">Hours</h3>
-              </div>
-              <div className="text-dark/60 space-y-1.5">
-                <p>Mon-Fri: 8:00 AM - 6:00 PM</p>
-                <p>Saturday: 9:00 AM - 5:00 PM</p>
-                <p>Sunday: Closed</p>
-              </div>
-            </div>
-            <div className="bg-yellow-pop/30 rounded-2xl p-7 border border-yellow-pop/50">
-              <div className="flex items-center gap-3 mb-2">
-                <Heart className="w-5 h-5 text-coral" />
-                <h3 className="font-heading text-lg font-bold">First Visit?</h3>
-              </div>
-              <p className="text-dark/60 text-sm leading-relaxed">
-                Please arrive 10 minutes early for your first visit so we can get to know you and your pup!
-              </p>
-            </div>
+          <div className="flex items-start gap-3">
+            <MapPin size={16} className="text-coral mt-0.5 shrink-0" />
+            <span>123 Bark Avenue</span>
+          </div>
+          <div className="flex items-start gap-3">
+            <Clock size={16} className="text-coral mt-0.5 shrink-0" />
+            <span>Mon-Sat 8am-6pm</span>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </div>
   );
 }

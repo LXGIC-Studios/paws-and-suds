@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Quicksand, DM_Sans } from "next/font/google";
+import { Nunito, DM_Sans } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
+import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
-const quicksand = Quicksand({
+const nunito = Nunito({
   subsets: ["latin"],
-  variable: "--font-quicksand",
+  variable: "--font-nunito",
   display: "swap",
 });
 
@@ -17,9 +17,9 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Paws & Suds Pet Spa | Dog Grooming & Pet Care",
+  title: "Paws & Suds Pet Spa | Professional Dog Grooming",
   description:
-    "Professional dog grooming in a stress-free environment. Bath & brush, full groom, nail trim, and more. Book your pup's spa day today!",
+    "Professional grooming in a stress-free, loving environment. Bath, groom, nail trim, and more for dogs of all sizes.",
 };
 
 export default function RootLayout({
@@ -28,10 +28,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${quicksand.variable} ${dmSans.variable}`}>
-      <body className="font-body text-[#2D2D2D] bg-white antialiased">
-        <Navbar />
-        <main className="pt-[76px]">{children}</main>
+    <html lang="en" className={`${nunito.variable} ${dmSans.variable}`}>
+      <body className="font-[family-name:var(--font-dm-sans)] text-dark bg-white antialiased">
+        <Navigation />
+        <main>{children}</main>
         <Footer />
       </body>
     </html>

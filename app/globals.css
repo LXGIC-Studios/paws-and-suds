@@ -1,28 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --font-heading: var(--font-quicksand), sans-serif;
-  --font-body: var(--font-dm-sans), sans-serif;
-  --color-lavender: #E8E0F0;
-  --color-lavender-light: #F3EEF8;
+  --color-lavender: #F3EEFF;
   --color-coral: #FF8B7E;
-  --color-coral-dark: #E8756A;
-  --color-yellow-pop: #FFF3CD;
+  --color-yellow-soft: #FFF7E6;
   --color-dark: #2D2D2D;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-a, button, .card {
-  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.section-label {
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--color-coral);
 }
