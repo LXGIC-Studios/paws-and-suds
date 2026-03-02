@@ -1,88 +1,96 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Scissors, Heart, Dog } from "lucide-react";
+import { Scissors, Droplets, Heart, Wind, Baby } from "lucide-react";
 import PawPrint from "@/components/PawPrint";
 
 const services = [
   {
-    icon: <Dog size={20} />,
+    icon: <Droplets size={20} />,
     name: "Bath & Brush",
-    price: "Starting at $35",
     desc: "Full wash, blow dry, and brush out",
+    price: "Starting at $35",
   },
   {
     icon: <Scissors size={20} />,
     name: "Full Groom",
-    price: "Starting at $55",
     desc: "Bath plus haircut, nail trim, ear cleaning",
-  },
-  {
-    icon: <span className="inline-block w-5 h-5"><svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 2C6 2 3 5 3 8c0 2 1 3 2 4l5 6 5-6c1-1 2-2 2-4 0-3-3-6-7-6z"/></svg></span>,
-    name: "Nail Trim",
-    price: "$15",
-    desc: "Quick and gentle nail trimming",
-  },
-  {
-    icon: <span className="inline-block w-5 h-5"><svg viewBox="0 0 20 20" fill="currentColor"><rect x="3" y="6" width="2" height="10" rx="1"/><rect x="7" y="3" width="2" height="13" rx="1"/><rect x="11" y="5" width="2" height="11" rx="1"/><rect x="15" y="7" width="2" height="9" rx="1"/></svg></span>,
-    name: "De-shedding Treatment",
-    price: "Starting at $45",
-    desc: "Reduce shedding with specialized tools",
+    price: "Starting at $55",
   },
   {
     icon: <Heart size={20} />,
-    name: "Puppy's First Groom",
-    price: "Starting at $30",
-    desc: "Gentle introduction for puppies under 6 months",
+    name: "Nail Trim",
+    desc: "Quick and gentle nail trimming",
+    price: "$15",
   },
+  {
+    icon: <Wind size={20} />,
+    name: "De-shedding Treatment",
+    desc: "Reduce shedding with specialized tools",
+    price: "Starting at $45",
+  },
+  {
+    icon: <Baby size={20} />,
+    name: "Puppy's First Groom",
+    desc: "Gentle introduction for puppies under 6 months",
+    price: "Starting at $30",
+  },
+];
+
+const pricing = [
+  { size: "Small Dogs", weight: "Under 25 lbs", price: "$35", badge: null },
+  {
+    size: "Medium Dogs",
+    weight: "25-50 lbs",
+    price: "$50",
+    badge: "Most Popular",
+  },
+  { size: "Large Dogs", weight: "50+ lbs", price: "$65", badge: null },
+];
+
+const galleryImages = [
+  { src: "/images/dog1.jpg", alt: "Happy golden retriever", tall: true },
+  { src: "/images/dog2.jpg", alt: "Well-groomed poodle", tall: false },
+  { src: "/images/dog3.jpg", alt: "Adorable french bulldog", tall: false },
+  { src: "/images/dog4.jpg", alt: "Fluffy white dog", tall: true },
+  { src: "/images/dog5.jpg", alt: "Dog enjoying bath time", tall: false },
+  { src: "/images/dog6.jpg", alt: "Two dogs playing", tall: true },
+  { src: "/images/dog7.jpg", alt: "Golden retriever portrait", tall: false },
+  { src: "/images/dog8.jpg", alt: "French bulldog puppy", tall: false },
 ];
 
 const testimonials = [
   {
-    quote: "My golden retriever has never looked so good. They were so gentle with him!",
+    quote:
+      "My golden retriever has never looked so good. They were so gentle with him!",
     name: "Megan C.",
     pet: "Cooper (Golden Retriever)",
   },
   {
-    quote: "Paws & Suds is the only groomer my picky poodle will tolerate. That says everything.",
+    quote:
+      "Paws & Suds is the only groomer my picky poodle will tolerate. That says everything.",
     name: "Andre J.",
     pet: "Bella (Standard Poodle)",
   },
   {
-    quote: "The puppy first groom package was perfect. My little guy was nervous but they handled it beautifully.",
+    quote:
+      "The puppy first groom package was perfect. My little guy was nervous but they handled it beautifully.",
     name: "Stephanie H.",
     pet: "Milo (French Bulldog)",
   },
 ];
 
-const galleryImages = [
-  { src: "/images/dog1.jpg", alt: "Happy golden retriever" },
-  { src: "/images/dog2.jpg", alt: "Well-groomed poodle" },
-  { src: "/images/dog3.jpg", alt: "Adorable french bulldog" },
-  { src: "/images/dog4.jpg", alt: "Fluffy white dog" },
-  { src: "/images/dog5.jpg", alt: "Dog enjoying bath time" },
-  { src: "/images/dog6.jpg", alt: "Two dogs playing" },
-  { src: "/images/dog7.jpg", alt: "Golden retriever portrait" },
-  { src: "/images/dog8.jpg", alt: "French bulldog puppy" },
-];
-
-const pricing = [
-  { size: "Small", weight: "Under 25 lbs", price: "$35", badge: null },
-  { size: "Medium", weight: "25-50 lbs", price: "$50", badge: "Most Popular" },
-  { size: "Large", weight: "50+ lbs", price: "$65", badge: null },
-];
-
 export default function Home() {
   return (
     <div>
-      {/* Hero */}
+      {/* Hero - Contained image card, NOT full-width */}
       <section className="max-w-4xl mx-auto px-6 pt-8 pb-16">
-        <div className="rounded-[20px] overflow-hidden mx-auto max-w-3xl">
+        <div className="rounded-3xl overflow-hidden mx-4 md:mx-8">
           <Image
             src="/images/dog1.jpg"
             alt="Happy groomed dog"
-            width={800}
-            height={500}
-            className="w-full h-[400px] object-cover"
+            width={900}
+            height={550}
+            className="w-full h-[360px] md:h-[440px] object-cover"
             priority
           />
         </div>
@@ -93,39 +101,47 @@ export default function Home() {
           <p className="mt-4 text-dark/60 text-lg max-w-md mx-auto">
             Professional grooming in a stress-free, loving environment
           </p>
-          <Link
-            href="/book"
-            className="inline-block mt-8 px-8 py-3 bg-coral text-white font-medium rounded-full hover:opacity-90 transition-opacity duration-300"
-          >
-            Book an Appointment
-          </Link>
+          <div className="flex flex-wrap justify-center gap-4 mt-8">
+            <Link
+              href="/book"
+              className="px-8 py-3 bg-coral text-white font-medium rounded-full hover:opacity-90 transition-opacity duration-300"
+            >
+              Book an Appointment
+            </Link>
+            <Link
+              href="#pricing"
+              className="px-8 py-3 border-2 border-lavender text-dark/70 font-medium rounded-full hover:bg-lavender transition-colors duration-300"
+            >
+              View Pricing
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* Services */}
+      {/* Services - Vertical menu list */}
       <section className="bg-lavender py-16">
         <div className="max-w-2xl mx-auto px-6">
           <h2 className="font-[family-name:var(--font-nunito)] text-3xl font-bold text-dark text-center mb-10">
             Our Services
           </h2>
-          <div className="divide-y divide-dark/10">
-            {services.map((s) => (
-              <div
-                key={s.name}
-                className="py-5 flex items-start gap-4 group hover:pl-3 hover:border-l-2 hover:border-coral transition-all duration-300"
-              >
-                <span className="text-coral mt-0.5 shrink-0">{s.icon}</span>
-                <div className="flex-1">
-                  <div className="flex items-baseline justify-between gap-4">
+          <div className="bg-white rounded-2xl p-6 md:p-8">
+            {services.map((s, i) => (
+              <div key={s.name}>
+                <div className="flex items-center gap-4 py-4">
+                  <span className="text-coral shrink-0">{s.icon}</span>
+                  <div className="flex-1 min-w-0">
                     <h3 className="font-[family-name:var(--font-nunito)] font-bold text-dark">
                       {s.name}
                     </h3>
-                    <span className="text-sm text-dark/50 whitespace-nowrap">
-                      {s.price}
-                    </span>
+                    <p className="text-sm text-dark/50 mt-0.5">{s.desc}</p>
                   </div>
-                  <p className="text-sm text-dark/50 mt-1">{s.desc}</p>
+                  <span className="text-sm text-dark/50 whitespace-nowrap shrink-0">
+                    {s.price}
+                  </span>
                 </div>
+                {i < services.length - 1 && (
+                  <div className="border-b border-dark/8" />
+                )}
               </div>
             ))}
           </div>
@@ -140,21 +156,23 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Pricing */}
-      <section className="max-w-4xl mx-auto px-6 py-16">
+      {/* Pricing - Three rounded cards */}
+      <section id="pricing" className="max-w-4xl mx-auto px-6 py-16">
         <h2 className="font-[family-name:var(--font-nunito)] text-3xl font-bold text-dark text-center mb-10">
           Pricing
         </h2>
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-6 items-end">
           {pricing.map((p) => (
             <div
               key={p.size}
-              className={`rounded-2xl p-8 text-center shadow-sm transition-shadow duration-300 hover:shadow-md ${
-                p.badge ? "bg-lavender" : "bg-white border border-dark/10"
+              className={`rounded-2xl p-8 text-center transition-all duration-300 ${
+                p.badge
+                  ? "bg-lavender shadow-lg scale-105 relative"
+                  : "bg-white border border-dark/10 hover:shadow-md"
               }`}
             >
               {p.badge && (
-                <span className="inline-block text-xs font-medium text-white bg-coral rounded-full px-3 py-1 mb-3">
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 text-xs font-medium text-white bg-coral rounded-full px-4 py-1">
                   {p.badge}
                 </span>
               )}
@@ -170,7 +188,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Gallery */}
+      {/* Gallery - Masonry grid */}
       <section className="bg-lavender py-16">
         <div className="max-w-5xl mx-auto px-6">
           <h2 className="font-[family-name:var(--font-nunito)] text-3xl font-bold text-dark text-center mb-10">
@@ -180,14 +198,16 @@ export default function Home() {
             {galleryImages.map((img, i) => (
               <div
                 key={i}
-                className="break-inside-avoid overflow-hidden rounded-xl hover:scale-[1.03] transition-transform duration-300"
+                className="break-inside-avoid overflow-hidden rounded-xl hover:scale-[1.02] transition-transform duration-300"
               >
                 <Image
                   src={img.src}
                   alt={img.alt}
                   width={400}
-                  height={300 + (i % 3) * 80}
-                  className="w-full object-cover"
+                  height={img.tall ? 500 : 300}
+                  className={`w-full object-cover ${
+                    img.tall ? "h-[320px]" : "h-[220px]"
+                  }`}
                 />
               </div>
             ))}
@@ -215,7 +235,7 @@ export default function Home() {
                 &ldquo;{t.quote}&rdquo;
               </p>
               <p className="mt-3 text-sm text-dark/50">
-                &mdash; {t.name}, {t.pet}
+                - {t.name}, {t.pet}
               </p>
             </div>
             {i < testimonials.length - 1 && (

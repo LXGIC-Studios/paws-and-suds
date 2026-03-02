@@ -34,7 +34,7 @@ export default function Footer() {
           <p className="text-xs text-dark/40">
             Built by{" "}
             <Link
-              href="https://lxgic.dev"
+              href="https://lxgicstudios.com"
               target="_blank"
               className="hover:text-coral transition-colors duration-300"
             >

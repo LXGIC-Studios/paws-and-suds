@@ -15,18 +15,19 @@ export default function Navigation() {
   }, []);
 
   const links = [
-    { href: "/services", label: "Services" },
+    { href: "/", label: "Home" },
+    { href: "/services", label: "Services & Pricing" },
     { href: "/gallery", label: "Gallery" },
-    { href: "/book", label: "Book" },
   ];
 
   return (
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-white shadow-sm" : "bg-white"
+        scrolled ? "bg-white/95 backdrop-blur-sm shadow-sm" : "bg-white"
       }`}
     >
       <div className="max-w-4xl mx-auto px-6 pt-6 pb-4">
+        {/* Centered logo */}
         <div className="text-center">
           <Link href="/">
             <h1 className="font-[family-name:var(--font-nunito)] text-3xl font-bold text-dark tracking-tight">
@@ -38,21 +39,27 @@ export default function Navigation() {
           </Link>
         </div>
 
-        {/* Desktop nav */}
-        <nav className="hidden md:flex justify-center gap-8 mt-4">
+        {/* Desktop nav - centered row below logo */}
+        <nav className="hidden md:flex justify-center items-center gap-8 mt-4">
           {links.map((l) => (
             <Link
               key={l.href}
               href={l.href}
-              className="text-sm tracking-wide text-dark/70 hover:text-coral transition-colors duration-300"
+              className="text-sm tracking-wide text-dark/60 hover:text-dark transition-colors duration-300"
             >
               {l.label}
             </Link>
           ))}
+          <Link
+            href="/book"
+            className="text-sm font-medium px-5 py-2 bg-coral text-white rounded-full hover:opacity-90 transition-opacity duration-300"
+          >
+            Book Now
+          </Link>
         </nav>
 
-        {/* Mobile hamburger */}
-        <div className="md:hidden flex justify-center mt-3">
+        {/* Mobile - hamburger + Book Now pill */}
+        <div className="md:hidden flex justify-center items-center gap-4 mt-3">
           <button
             onClick={() => setOpen(!open)}
             className="text-dark/60"
@@ -60,6 +67,12 @@ export default function Navigation() {
           >
             {open ? <X size={22} /> : <Menu size={22} />}
           </button>
+          <Link
+            href="/book"
+            className="text-sm font-medium px-5 py-2 bg-coral text-white rounded-full hover:opacity-90 transition-opacity duration-300"
+          >
+            Book Now
+          </Link>
         </div>
 
         {open && (
@@ -69,7 +82,7 @@ export default function Navigation() {
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="text-sm tracking-wide text-dark/70 hover:text-coral transition-colors duration-300"
+                className="text-sm tracking-wide text-dark/60 hover:text-dark transition-colors duration-300"
               >
                 {l.label}
               </Link>
